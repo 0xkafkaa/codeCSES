@@ -1,6 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
+import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 export type Question = {
   id: number;
@@ -42,7 +43,17 @@ export const columns: ColumnDef<Question>[] = [
     header: "Category",
     size: 25,
     cell: ({ row }) => {
-      return <div className="text-center">{row.getValue("tags")}</div>;
+      // return <div className="text-center">{row.getValue("tags")}</div>;
+      return (
+        <div className="text-center">
+          <Badge
+            variant={"outline"}
+            className="bg-slate-200 text-customBlack font-normal shadow-none rounded-xl px-4 py-2"
+          >
+            {row.getValue("tags")}
+          </Badge>
+        </div>
+      );
     },
   },
   {
