@@ -15,13 +15,22 @@ export default {
         lg: "1200px",
       },
       extend: {
-        container: {
-          center: true,
-          padding: {
-            DEFAULT: "20px",
-            lg: "80px",
-          },
-        },
+        // container: {
+        //   center: true,
+        //   padding: {
+        //     DEFAULT: "1rem",
+        //     sm: "2rem",
+        //     lg: "4rem",
+        //     xl: "5rem",
+        //   },
+        //   screens: {
+        //     sm: "640px",
+        //     md: "768px",
+        //     lg: "1024px",
+        //     xl: "1280px",
+        //     "2xl": "1536px", // You can add custom sizes here
+        //   },
+        // },
       },
       colors: {
         customBlack: "#121417",

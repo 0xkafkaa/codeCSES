@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 export default function Home() {
-  return <Navbar />;
+  return <h1>Test</h1>;
 }
