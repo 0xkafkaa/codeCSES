@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink } from "lucide-react";
+// import { ExternalLink } from "lucide-react";
 export type Question = {
   id: number;
   name: string;
@@ -24,10 +24,10 @@ export const columns: ColumnDef<Question>[] = [
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1"
+            className="text-center"
           >
             {row.getValue("name")}
-            <ExternalLink width={16} height={16} />
+            {/* <ExternalLink width={16} height={16} /> */}
           </a>
         </div>
       );
