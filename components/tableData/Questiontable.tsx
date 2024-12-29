@@ -15,9 +15,23 @@ import { csesData } from "@/data/data";
 // }
 
 export default async function QuestionTable() {
+  const tagNames = [
+    "Introductory Problems",
+    "Sorting and Searching",
+    "Dynamic Programming",
+    "Graph Algorithms",
+    "Range Queries",
+    "Tree Algorithms",
+    "Mathematics",
+    "String Algorithms",
+    "Geometry",
+    "Advanced Techniques",
+    "Additional Problems",
+  ];
+
   return (
     <div>
-      <DataTable columns={columns} data={csesData} />
+      <DataTable columns={columns} data={csesData} tags={tagNames} />
     </div>
   );
 }

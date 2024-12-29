@@ -2,6 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "../ui/button";
 // import { ExternalLink } from "lucide-react";
 export type Question = {
   id: number;
@@ -14,7 +15,7 @@ export const columns: ColumnDef<Question>[] = [
   {
     accessorKey: "name",
     header: "Problem",
-    size: 25,
+    size: 20,
     cell: ({ row }) => {
       const link = `https://cses.fi/problemset/task/${row.getValue("id")}`;
 
@@ -27,7 +28,6 @@ export const columns: ColumnDef<Question>[] = [
             className="text-center"
           >
             {row.getValue("name")}
-            {/* <ExternalLink width={16} height={16} /> */}
           </a>
         </div>
       );
@@ -36,32 +36,31 @@ export const columns: ColumnDef<Question>[] = [
   {
     accessorKey: "question",
     header: "Description",
-    size: 50,
+    size: 40,
   },
   {
     accessorKey: "tags",
     header: "Category",
-    size: 25,
-    cell: ({ row }) => {
-      // return <div className="text-center">{row.getValue("tags")}</div>;
-      return (
-        <div className="text-center">
-          <Badge
-            variant={"outline"}
-            className="bg-slate-200 text-customBlack ont-normal shadow-none rounded-xl px-4 py-2"
-          >
-            {row.getValue("tags")}
-          </Badge>
-        </div>
-      );
-    },
+    size: 20,
+    cell: ({ row }) => (
+      <div className="text-center">
+        <Badge
+          variant="outline"
+          className="bg-slate-200 text-customBlack font-medium text-sm shadow-none rounded-xl px-4 py-2"
+        >
+          {row.getValue("tags")}
+        </Badge>
+      </div>
+    ),
   },
   {
     accessorKey: "id",
     header: "Action",
-    size: 25,
-    cell: ({ row }) => {
-      return <div className="text-center">{row.getValue("id")}</div>;
-    },
+    size: 20,
+    cell: ({}) => (
+      <div className="text-center">
+        <Button>View Solution</Button>
+      </div>
+    ),
   },
 ];
