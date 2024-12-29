@@ -12,7 +12,7 @@ const Navbar: FC = () => {
     <nav className="flex items-center justify-between px-6 py-4 text-customBlack background-blur-sm">
       <div className="flex items-center space-x-3">
         <Logo className="w-8 h-8" />
-        <span className="text-lg font-semibold">CodeBites</span>
+        <span className="text-lg font-semibold">CodeCSES</span>
       </div>
       <Button
         onClick={() => handleBrowseCode()}

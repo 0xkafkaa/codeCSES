@@ -2,13 +2,15 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 // import { ExternalLink } from "lucide-react";
+import CppCodeDialog from "../Solution";
 export type Question = {
   id: number;
   name: string;
   question: string;
   tags: string;
+  solution: string;
 };
 
 export const columns: ColumnDef<Question>[] = [
@@ -17,7 +19,8 @@ export const columns: ColumnDef<Question>[] = [
     header: "Problem",
     size: 20,
     cell: ({ row }) => {
-      const link = `https://cses.fi/problemset/task/${row.getValue("id")}`;
+      const id = row.original.id;
+      const link = `https://cses.fi/problemset/task/${id}`;
 
       return (
         <div className="underline flex gap-1 justify-center items-center">
@@ -54,12 +57,13 @@ export const columns: ColumnDef<Question>[] = [
     ),
   },
   {
-    accessorKey: "id",
+    accessorKey: "solution",
     header: "Action",
     size: 20,
-    cell: ({}) => (
+    cell: ({ row }) => (
       <div className="text-center">
-        <Button>View Solution</Button>
+        {/* <Button>View Solution</Button> */}
+        <CppCodeDialog code={row.getValue("solution")} />
       </div>
     ),
   },

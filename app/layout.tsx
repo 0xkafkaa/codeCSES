@@ -6,8 +6,8 @@ import Navbar from "@/components/Navbar";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Saas Landing Page",
-  description: "A frondend project",
+  title: "CodeCSES",
+  description: "A Solution Page for CSES Problem set",
 };
 
 export default function RootLayout({
