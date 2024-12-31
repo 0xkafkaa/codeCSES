@@ -27,7 +27,7 @@ interface DataTableProps<TData, TValue> {
   tags: string[];
 }
 
-export function DataTable<TData, TValue>({
+export function DataTable<TData extends { tags: string }, TValue>({
   columns,
   data,
   tags,
@@ -38,9 +38,7 @@ export function DataTable<TData, TValue>({
   // Filter data by selected tag
   const filteredData = useMemo(() => {
     if (!selectedTag) return data;
-    return data.filter(
-      (item: any) => item.tags.includes(selectedTag) // Assuming each item has a `tags` array
-    );
+    return data.filter((item) => item.tags.includes(selectedTag));
   }, [data, selectedTag]);
 
   const table = useReactTable({
